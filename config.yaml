@@ -15,10 +15,10 @@ dns:
 proxies:
   - name: CN-STATIC
     type: ss
-    server: 1.2.3.4
-    port: 8388
+    server: 119.91.5.158
+    port: 8399
     cipher: aes-256-gcm
-    password: password123
+    password: cn123456
 
 proxy-groups:
   - name: BROWSER
@@ -28,10 +28,4 @@ proxy-groups:
       - DIRECT
 
 rules:
-  # 浏览器走国内固定 IP
-  - PROCESS-NAME,chrome.exe,BROWSER
-  - PROCESS-NAME,msedge.exe,BROWSER
-  - PROCESS-NAME,firefox.exe,BROWSER
-
-  # 其余流量直连
-  - MATCH,DIRECT
+  - MATCH,BROWSER
